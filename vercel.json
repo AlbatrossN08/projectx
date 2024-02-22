@@ -1,18 +1,19 @@
 {
-    "version":2,
-    "builds":[
-        {
-            "src":"./app.py",
-            "use":"@vercel/python",
-            "config":{"runtime"}:"python3.8"
-
-        }
-    ],
-    "routes":[
-        {
-            "src":"/(.*)",
-            "dest":"/"
-        }
-
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "./app.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.8",
+        "python-version": "3.8.10" // Specify the actual Python version
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
 }
