@@ -37,6 +37,7 @@ gitdb==4.0.10
 GitPython==3.1.31
 graphviz==0.20.1
 greenlet==3.0.3
+gunicorn==19.7.1
 html5lib==1.1
 htmlmin==0.1.12
 idna==3.4
