@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .prediction {
+            margin-top: 30px;
+        }
+
+        .prediction h2 {
+            color: #007bff;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Disease Predictor</h1>
+        <form id="predictionForm" method="post" action="/predict">
+            <textarea id="symptoms" name="symptoms" placeholder="Enter symptoms separated by commas">{{symptoms}}</textarea>
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if predictions %}
+        <div class="prediction">
+            <h2>Final Prediction: {{ predictions.final_prediction }}</h2>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="error">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
+
+
