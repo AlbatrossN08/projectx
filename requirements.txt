@@ -1,2 +1,5 @@
 Flask==1.1.4
 numpy==1.21.6
+Jinja2==2.11.3
+markupsafe==2.0.1
+
