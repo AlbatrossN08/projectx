@@ -49,7 +49,7 @@ def predict_disease():
 
     except Exception as e:
         print(f"Error: {e}")
-        return jsonify({"error": "Invalid input or error occurred"}), 400
+        return jsonify({"error": "Invalid input or error occurred"}), 200
 
 if __name__ == "__main__":
     app.run(debug=True ,port="8050")
