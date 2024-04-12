@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 import pickle
 import numpy as np
 from statistics import mode
@@ -16,7 +17,7 @@ with open("data_dict.pkl", "rb") as f:
     data_dict = pickle.load(f)
 
 app = Flask(__name__)
-
+CORS(app) 
 @app.route("/")
 def home():
     return render_template("index.html")
